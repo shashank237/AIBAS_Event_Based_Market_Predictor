@@ -1,0 +1,25 @@
+version: "3.9"
+
+volumes:
+  ai_system:
+
+services:
+  learning:
+    image: learningbase_futurejobsalary
+    volumes:
+      - ai_system:/tmp
+
+  activation:
+    image: activationbase_futurejobsalary
+    volumes:
+      - ai_system:/tmp
+
+  knowledge:
+    image: knowledgebase_futurejobsalary
+    volumes:
+      - ai_system:/tmp
+
+  code:
+    image: codebase_futurejobsalary
+    volumes:
+      - ai_system:/tmp
