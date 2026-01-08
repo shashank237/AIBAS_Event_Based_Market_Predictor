@@ -1,0 +1,28 @@
+version: "3.9"
+
+volumes:
+  ai_system:
+
+services:
+  learning:
+    image: aibas-learning
+    volumes:
+      - ai_system:/tmp
+
+  activation:
+    image: aibas-activation
+    volumes:
+      - ai_system:/tmp
+
+  knowledge:
+    image: aibas-knowledge
+    volumes:
+      - ai_system:/tmp
+
+  code:
+    image: aibas-activation
+    volumes:
+      - ai_system:/tmp
+
+
+
