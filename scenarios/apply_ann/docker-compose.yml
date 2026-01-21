@@ -5,24 +5,21 @@ volumes:
 
 services:
   learning:
-    image: aibas-learning
-    volumes:
-      - ai_system:/tmp
-
-  activation:
-    image: aibas-activation
+    image: shashankk5/event-based-market-learning:latest
     volumes:
       - ai_system:/tmp
 
   knowledge:
-    image: aibas-knowledge
+    image: shashankk5/event-based-market-knowledge:latest
+    volumes:
+      - ai_system:/tmp
+
+  activation:
+    image: shashankk5/event-based-market-activation:latest
     volumes:
       - ai_system:/tmp
 
   code:
-    image: aibas-activation
+    image: shashankk5/event-based-market-code:latest
     volumes:
       - ai_system:/tmp
-
-
-
