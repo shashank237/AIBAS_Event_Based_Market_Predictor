@@ -1,12 +1,7 @@
-FROM python:3.10-slim
+FROM busybox
 
-WORKDIR /app
+WORKDIR /tmp/learningBase
 
-RUN pip install --no-cache-dir pandas numpy scikit-learn statsmodels tensorflow joblib
-
-COPY data /app/data
-COPY scripts /app/scripts
-
-RUN mkdir /app/models
-
-CMD ["python", "/app/scripts/train_models.py"]
+COPY data/train/training_data.csv /tmp/learningBase/train/training_data.csv
+COPY data/validation/test_data.csv /tmp/learningBase/validation/test_data.csv
+COPY Readme.md /tmp/learningBase/Readme.md

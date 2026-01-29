@@ -5,21 +5,24 @@ volumes:
 
 services:
   learning:
-    image: learningbase_futurejobsalary
+    image: shashankk5/event-based-market-learning
     volumes:
       - ai_system:/tmp
 
   activation:
-    image: activationbase_futurejobsalary
+    image: shashankk5/event-based-market-activation
     volumes:
       - ai_system:/tmp
 
   knowledge:
-    image: knowledgebase_futurejobsalary
+    image: shashankk5/event-based-market-knowledge
     volumes:
       - ai_system:/tmp
 
   code:
-    image: codebase_futurejobsalary
+    image: shashankk5/event-based-market-code
     volumes:
       - ai_system:/tmp
+    depends_on:
+      - activation
+      - knowledge

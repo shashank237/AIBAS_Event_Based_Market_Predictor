@@ -1,10 +1,8 @@
 FROM busybox
 
-WORKDIR /knowledge
+WORKDIR /tmp/knowledge/models
 
-# Copy trained models into knowledge base
-COPY models/ ./models/
-
-# Keep container alive
-CMD ["sh", "-c", "echo 'Knowledge Base ready' && sleep infinity"]
-
+COPY models/currentAiSolution.h5 .
+COPY models/currentOlsSolution.pkl .
+COPY models/scaler.pkl .
+COPY Readme.md /tmp/knowledge/Readme.md

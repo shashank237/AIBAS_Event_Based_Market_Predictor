@@ -1,10 +1,6 @@
-FROM python:3.10-slim
+FROM busybox
 
-WORKDIR /app
+WORKDIR /tmp/activation
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY run_prediction.py .
-
-CMD ["python", "run_prediction.py"]
+COPY activation_data.csv /tmp/activation/activation_data.csv
+COPY Readme.md /tmp/activation/Readme.md
